@@ -10,6 +10,10 @@
 | Veri | Canada vehicle CO₂ emissions CSV |
 | Geliştirici | Anıl Polat |
 
+## Proje bağlamı
+
+Üniversite eğitimi sırasında geliştirilen bir makine öğrenmesi projesidir. Veri ön işleme, regresyon modellerinin karşılaştırılması ve tahminlerin etkileşimli bir arayüzde sunulması üzerine yapılan uygulamalı çalışmaları içerir.
+
 ## Genel bakış
 
 Motor hacmi, silindir sayısı, yakıt tüketimi, marka, model ve diğer araç bilgilerini kullanarak üç regresyon modeli arasında karşılaştırmalı tahmin sunan bir eğitim projesidir.
@@ -53,4 +57,4 @@ Bu düzenleme kapsamında model dosyaları yüklenmedi ve modeller yeniden eğit
 
 ## Veri ve model güvenliği
 
-Yalnız kaynağını bildiğiniz kendi model dosyalarınızı kullanın. Pickle/joblib dosyaları yüklenirken kod çalıştırabilir; dışarıdan gelen model dosyalarını doğrulamadan açmayın. CSV'nin ilk kaynağı ve yeniden dağıtım koşulları bu depoda belgelenmemiştir; public paylaşım öncesinde doğrulanmalıdır. Gerçek kullanıcı verileri, servis anahtarları ve ortam dosyaları depoya eklenmemelidir.
+Yalnız kaynağını bildiğiniz kendi model dosyalarınızı kullanın. Pickle/joblib dosyaları yüklenirken kod çalıştırabilir; dışarıdan gelen model dosyalarını doğrulamadan açmayın. CSV'nin özgün indirme bağlantısı proje arşivinde kayıtlı değildir; veri kaynağına ilişkin atıf bilgisinin tamamlanması geliştirme notları arasındadır. Gerçek kullanıcı verileri, servis anahtarları ve ortam dosyaları depoya eklenmemelidir.
