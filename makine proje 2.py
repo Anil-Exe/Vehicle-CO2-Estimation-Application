@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 import lightgbm as lgb
@@ -19,7 +20,7 @@ from sklearn.neighbors import KNeighborsRegressor
 # 1. Veri Yükleme ve Temizleme
 # ==============================================================================
 # Veri setini yükle ve sütun isimlerini temizle (boşluklar, parantezler vb. kaldır)
-df = pd.read_csv(r"C:\Users\anilp\Desktop\CO2 Emissions_Canada.csv")
+df = pd.read_csv(Path(__file__).resolve().parent / 'CO2 Emissions_Canada.csv')
 df.columns = df.columns.str.replace(' ', '_').str.replace('(', '').str.replace(')', '').str.replace('/', '_').str.replace('.', '').str.strip()
 
 # Eksik değerleri kontrol et
