@@ -1,0 +1,11 @@
+# Direct runtime/training dependencies. Historical model versions are not locked.
+streamlit
+pandas
+numpy
+joblib
+scikit-learn
+lightgbm
+tensorflow
+scipy
+matplotlib
+seaborn
