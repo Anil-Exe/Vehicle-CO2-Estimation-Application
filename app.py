@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import joblib
+from preprocessing import build_model_input
 from tensorflow.keras.models import load_model # Keras modelini yüklemek için
 
 # 1. Kaydedilmiş Modelleri ve Preprocessor'ları Yükle
@@ -117,19 +117,7 @@ if st.button("CO2 Emisyonunu Tahmin Et"):
 
     # Kategorik değişkenler için One-Hot Encoding uygula
     # `all_categorical_cols` listesi, `load_all_assets` fonksiyonundan geliyor ve doğru kategorik sütun isimlerini içeriyor.
-    processed_input = pd.get_dummies(input_df, columns=all_categorical_cols, drop_first=True)
-
-    # Eğitimde kullanılan tüm özellikleri içeren bir şablon DataFrame oluştur
-    # ve giriş verisini bu şablona göre düzenle
-    final_input = pd.DataFrame(columns=model_features_list)
-
-    for col in final_input.columns:
-        if col in processed_input.columns:
-            final_input[col] = processed_input[col]
-        else:
-            final_input[col] = 0 # Olmayan dummy değişkenleri 0 olarak ayarla
-
-    final_input = final_input.fillna(0) # NaN değerlerini 0 ile doldur (olası hatalara karşı)
+    final_input = build_model_input(input_df, all_categorical_cols, model_features_list)
 
     # Sayısal sütunları ölçeklendir
     # numeric_cols listesi global olarak tanımlanmış olmalı
